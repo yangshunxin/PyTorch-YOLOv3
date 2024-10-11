@@ -1,0 +1,4 @@
+data/coco
+output/
+weights/yolo*
+weights/darknet*
