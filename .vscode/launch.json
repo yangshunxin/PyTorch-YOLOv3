@@ -1,0 +1,50 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                // "--model", "config/yolov3-custom.cfg",
+                "--model", "config/yolov3.cfg",
+                // "--data_config", "config/custom.data",
+                "--data_config", "config/coco.data",
+                "--pretrained_weights", "weights/darknet53.conv.74",
+                "--batch_size", "2",
+                // "--output_format", "singujson",
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CUDA_VISIBLE_DEVICES": "-1",
+            }
+        },
+        {
+            "name": "detect",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/detect.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                // "--model", "config/yolov3-custom.cfg",
+                // "--model", "config/yolov3.cfg",
+                // "--data_config", "config/custom.data",
+                // "--data_config", "config/coco.data",
+                // "--pretrained_weights", "weights/darknet53.conv.74",
+                // "--batch_size", "2",
+                // "--output_format", "singujson",
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CUDA_VISIBLE_DEVICES": "-1",
+            }
+        }
+    ]
+}
